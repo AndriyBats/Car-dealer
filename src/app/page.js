@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
+// components
+import Loader from '@/components';
 // helpers
 import * as H from '../helpers';
 // api
@@ -43,11 +45,13 @@ function Home() {
     };
   }, [carTypes]);
 
+  if (H.isNilOrEmpty(carTypes)) return <Loader />
+
   return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <img
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+          <img
             alt="Your Company"
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
             className="mx-auto h-10 w-auto"

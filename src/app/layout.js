@@ -15,11 +15,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <title>Car Dealer</title>
+      </head>
       <body className={inter.className}>
         <Suspense fallback={<Loader />}>
-          { children }
+          {children}
         </Suspense>
       </body>
-    </html>
+  </html>
   );
 }
