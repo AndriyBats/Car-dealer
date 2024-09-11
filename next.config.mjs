@@ -4,7 +4,7 @@ const nextConfig = {
     BASE_URL: process.env.REACT_APP_BASE_URL,
   },
   output: 'export',
-  basePath: '/docs',
+  basePath: '/Car-dealer',
 };
 
 export default nextConfig;
